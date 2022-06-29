@@ -1,19 +1,16 @@
-from turtle import speed
-
-
-class Car:
-    carname = ""
+class Car():
     speed = 0
+    def p(speed, name):
+        print(name,"===>현재의 속도(슈퍼 클래스)",speed)
 
-Car_1 = Car()
-Car_1.carname = "아우디"
-Car_1.speed = 0
-Car_2 = Car()
-Car_2.carname = "벤츠"
-Car_2.speed = 30
+class sedan(Car):
+    def p(speed, name):
+        print(name,"===>현재의 속도(서브 클래스)",speed)
 
-def present(Carvalue1, Carvalue2):
-    print(Carvalue1.carname,"의 현재 속도는",Carvalue1.speed,"입니다.")
-    print(Carvalue2.carname,"의 현재 속도는",Carvalue2.speed,"입니다.")
+class Sonata(sedan):
+    pass
 
-present(Car_1,Car_2)
+
+car1 = Car.p(200, "트럭")
+car2 = sedan.p(150, "승용차")
+car3 = Sonata.p(150, "소나타")
